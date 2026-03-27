@@ -31,13 +31,6 @@ The goal of this project is to validate key functionalities of the ServeRest app
 ---
 
 ## Project Structure
-cypress/
-----e2e/
--------frontend/
--------api/
-----fixtures/
-----pages/
-----support/
 
 - `frontend/` → UI test scenarios
 - `api/` → API test scenarios using `cy.request()`
