@@ -32,6 +32,18 @@ The goal of this project is to validate key functionalities of the ServeRest app
 
 ## Project Structure
 
+qa-test-abi/
+├── cypress/
+│ ├── e2e/
+│ │ ├── frontend/
+│ │ └── api/
+│ ├── pages/
+│ ├── fixtures/
+│ └── support/
+├── cypress.config.js
+├── package.json
+└── README.md
+
 - `frontend/` → UI test scenarios
 - `api/` → API test scenarios using `cy.request()`
 - `pages/` → Page Object Model (POM) structure
@@ -62,6 +74,11 @@ Install dependencies:
 1. Open CMD
 2. Run npx cypress open
 3. Select desired options in the UI
+
+or 
+
+1. Open CMD
+2. npm run cy:open
 
 ---
 
