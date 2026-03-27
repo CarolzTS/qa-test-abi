@@ -3,19 +3,12 @@ import cadastrarProdutoPage from '../../pages/cadastrar-produto.page'
 
 describe('Product registration functionality', () => {
   it('should register a new product successfully', () => {
+    const productName = `Produto ${Date.now()}`
 
-    cy.fixture('user-login-creds').then((user) => {
-
-      const productName = `Produto ${Date.now()}`
-
-      // Precondition - be logged in
-      loginPage.visit()
-      loginPage.fillEmail(user.email)
-      loginPage.fillPassword(user.password)
-      loginPage.clickLogin()
+    cy.createAdminUser().then((adminUser) => {
+      loginPage.login(adminUser.email, adminUser.password)
       loginPage.assertLoginSuccess()
 
-      // main functionality
       cadastrarProdutoPage.clickCadastrarProdutoCard()
       cadastrarProdutoPage.fillNome(productName)
       cadastrarProdutoPage.fillPreco('100')
@@ -24,7 +17,6 @@ describe('Product registration functionality', () => {
       cadastrarProdutoPage.uploadImagem()
       cadastrarProdutoPage.clickCadastrar()
 
-      // validation for functionality
       cadastrarProdutoPage.assertRedirectToListaProdutos()
       cy.contains('Lista dos Produtos').should('be.visible')
     })

@@ -1,16 +1,10 @@
 import loginPage from '../../pages/login-sucesso.page'
 
 describe('Login functionality', () => {
-    it('should login successfully with valid credentials', () => {
-        /* Precondition - user has signed up and selected to be admin 
-            Below is main functionality for this test case
-        */
-        cy.fixture('user-login-creds').then((user) => {
-            loginPage.visit()
-            loginPage.fillEmail(user.email)
-            loginPage.fillPassword(user.password)
-            loginPage.clickLogin()
-            loginPage.assertLoginSuccess()
-        })
+  it('should login successfully with a newly created valid admin user', () => {
+    cy.createAdminUser().then((user) => {
+      loginPage.login(user.email, user.password)
+      loginPage.assertLoginSuccess()
     })
+  })
 })

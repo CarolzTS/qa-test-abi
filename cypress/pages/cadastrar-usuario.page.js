@@ -1,7 +1,8 @@
 class CadastrarUsuarioPage {
   clickCadastrarUsuarioCard() {
-    cy.contains('div.card, div', 'Cadastrar Usuários')
-    cy.contains('button, a', 'Cadastrar').first().click()
+    cy.contains('.card', 'Cadastrar Usuários')
+      .contains('a, button', 'Cadastrar')
+      .click()
   }
 
   fillNome(nome) {
