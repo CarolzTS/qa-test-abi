@@ -32,12 +32,6 @@ The goal of this project is to validate key functionalities of the ServeRest app
 
 ## Project Structure
 
-qa-test-abi/
-## Project Structure
-
-```
-## Project Structure
-
 ```
 qa-test-abi/
 ├── cypress/
