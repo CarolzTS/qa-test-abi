@@ -33,16 +33,32 @@ The goal of this project is to validate key functionalities of the ServeRest app
 ## Project Structure
 
 qa-test-abi/
+## Project Structure
+
+```
+qa-test-abi/
 ├── cypress/
-│ ├── e2e/
-│ │ ├── frontend/
-│ │ └── api/
-│ ├── pages/
-│ ├── fixtures/
-│ └── support/
-├── cypress.config.js
+│   ├── e2e/
+│   │   ├── api/
+│   │   │   ├── login-success-api.cy.js
+│   │   │   └── cadastrar-produto-api.cy.js
+│   │   └── frontend/
+│   │       ├── login-success.cy.js
+│   │       ├── cadastrar-usuario-sucesso.cy.js
+│   │       └── cadastrar-novo-produto-sucesso.cy.js
+│   ├── fixtures/
+│   │   └── user-login-creds.json
+│   ├── pages/
+│   │   ├── loginPage.js
+│   │   ├── cadastrarUsuarioPage.js
+│   │   └── cadastrarProdutoPage.js
+│   └── support/
+│       ├── commands.js
+│       └── e2e.js
 ├── package.json
+├── cypress.config.js
 └── README.md
+```
 
 - `frontend/` → UI test scenarios
 - `api/` → API test scenarios using `cy.request()`
