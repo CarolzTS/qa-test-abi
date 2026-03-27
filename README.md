@@ -36,6 +36,9 @@ qa-test-abi/
 ## Project Structure
 
 ```
+## Project Structure
+
+```
 qa-test-abi/
 ├── cypress/
 │   ├── e2e/
@@ -47,7 +50,8 @@ qa-test-abi/
 │   │       ├── cadastrar-usuario-sucesso.cy.js
 │   │       └── cadastrar-novo-produto-sucesso.cy.js
 │   ├── fixtures/
-│   │   └── user-login-creds.json
+│   │   └── images/
+│   │       └── kittycat.jpg
 │   ├── pages/
 │   │   ├── loginPage.js
 │   │   ├── cadastrarUsuarioPage.js
@@ -59,6 +63,7 @@ qa-test-abi/
 ├── cypress.config.js
 └── README.md
 ```
+
 
 - `frontend/` → UI test scenarios
 - `api/` → API test scenarios using `cy.request()`
