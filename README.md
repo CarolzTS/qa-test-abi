@@ -11,7 +11,7 @@ The goal of this project is to validate key functionalities of the ServeRest app
 ## Implemented Scenarios
 
 ### Frontend (E2E)
-1. Login successfully with valid credentials
+1. Login successfully with valid credentials (non-static data)
 2. Register a new user successfully
 3. Register a new product successfully
 
@@ -47,7 +47,7 @@ qa-test-abi/
 - `frontend/` → UI test scenarios
 - `api/` → API test scenarios using `cy.request()`
 - `pages/` → Page Object Model (POM) structure
-- `fixtures/` → static test data (e.g. login credentials)
+- `fixtures/` → image needed for scenario
 
 ---
 
@@ -68,7 +68,7 @@ Install dependencies:
 
 ---
 
-## Running the tests
+## Running the tests with live results
 
 ### Open Cypress UI
 1. Open CMD
@@ -85,7 +85,7 @@ or
 ## Notes
 
 - Dynamic data (e.g. emails, product names) is generated at runtime to avoid duplication issues.
-- Login credentials are stored in fixtures for reuse across tests.
+- Login credentials are no longer stored in fixtures for reuse across tests, due to token expiring after some time and demo account being deleted.
 - API tests are independent and follow the actual behavior of each endpoint.
 - Frontend tests follow the Page Object Model (POM) pattern for better organization and maintainability.
 - Instructions for test found in /instruction-docs
